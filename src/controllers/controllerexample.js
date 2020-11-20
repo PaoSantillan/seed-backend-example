@@ -10,14 +10,14 @@ class ExampleController{
         }
     }
 
-    static async getOne(req, res, next){
+    /*static async getOne(req, res, next){
         try{
             const result = await ExampleService.getOne(req.params.id);
             res.send(result);
         }catch(err){
             next(err);
         }
-    }
+    }*/
 
     static async create(req, res, next){
 
@@ -41,6 +41,52 @@ class ExampleController{
     static async delete(req, res, next){
         try{
             const result = await ExampleService.delete(req.params.id);
+            res.send(result);
+        }catch(err){
+            next(err);
+        }
+    }
+
+    // Lo desarrollado...
+    static async listBankAccounts(req, res, next){
+        try{
+            const result = await ExampleService.listBankAccounts();
+            res.status(200).send(result);
+        }catch(err){
+            next(err);
+        }
+    }
+
+    static async listBanksByCreationDate(req, res, next){
+        try{
+            const result = await ExampleService.listBanksByCreationDate();
+            res.send(result);
+        }catch(err){
+            next(err);
+        }
+    }
+
+    static async listBanksBetween5And10(req, res, next){
+        try{
+            const result = await ExampleService.listBanksBetween5And10();
+            res.send(result);
+        }catch(err){
+            next(err);
+        }
+    }
+
+    static async deactivateUsers(req, res, next){
+        try{
+            const result = await ExampleService.deactivateUsers();
+            res.send(result);
+        }catch(err){
+            next(err);
+        }
+    }
+
+    static async activateUsers(req, res, next){
+        try{
+            const result = await ExampleService.activateUsers();
             res.send(result);
         }catch(err){
             next(err);
