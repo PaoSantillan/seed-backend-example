@@ -16,7 +16,7 @@ module.exports = router => {
         .patch(ExampleController.update)
         .delete(ExampleController.delete);
 
-    // En desarrollo...
+    // Lo desarrollado...
     router.route('/listBankAccounts')
         //Example: GET localhost:3001/api/routeexample/listBankAccounts
         .get(ExampleController.listBankAccounts);
